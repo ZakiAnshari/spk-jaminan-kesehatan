@@ -22,6 +22,19 @@
                 font-size: 12px !important;
                 padding: 8px !important;
             }
+
+            /* Hapus efek scroll dan garis saat print */
+            .print-no-scroll {
+                overflow: visible !important;
+            }
+
+            .print-no-scroll::-webkit-scrollbar {
+                display: none !important;
+            }
+
+            .table-responsive {
+                overflow-x: visible !important;
+            }
         }
     </style>
 </head>
@@ -35,8 +48,7 @@
             <h6 class="text-muted">BPJS Kesehatan Kota Padang Panjang</h6>
         </div>
 
-
-        <div class="table-responsive text-nowrap">
+        <div class="table-responsive text-nowrap print-no-scroll">
             <table class="table table-hover table-bordered align-middle text-nowrap mb-0">
                 <thead class="table-light">
                     <tr>
@@ -68,14 +80,12 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4" class="text-center">Data Kosong</td>
+                            <td colspan="8" class="text-center">Data Kosong</td>
                         </tr>
                     @endforelse
                 </tbody>
             </table>
-
         </div>
-
 
         <!-- Bagian Tanda Tangan -->
         <div class="row mt-5">
@@ -84,7 +94,7 @@
                 <p class="mb-1">{{ \Carbon\Carbon::now()->translatedFormat('l') }},
                     {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</p>
                 <p class="mb-5">Kepala Cabang BPJS Kesehatan</p>
-                <p class="fw-bold text-uppercase mb-1">Drs. H. Ahmad Yani, M.M</p>
+                <p class="fw-bold text-uppercase mb-1">Haris Wahyudi</p>
                 <p class="mb-0">NIP: 19720304 199601 1 003</p>
             </div>
         </div>

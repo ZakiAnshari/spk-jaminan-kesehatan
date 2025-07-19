@@ -38,8 +38,8 @@ class UserSeeder extends Seeder
         ]);
         // petugas
         User::create([
-            'name' => 'Petugas BPJS',
-            'username' => 'petugas',
+            'name' => 'Petugas',
+            'username' => 'Petugas BPJS',
             'contact' => '081234567890',
             'role_id' => 2, // Pimpinan
             'email' => 'petugas@example.com',
@@ -50,8 +50,8 @@ class UserSeeder extends Seeder
         ]);
         // Pimpinan
         User::create([
-            'name' => 'Pimpinan BPJS',
-            'username' => 'pimpinan',
+            'name' => 'Pimpinan',
+            'username' => 'Pimpinan',
             'contact' => '081234567890',
             'role_id' => 3, // Pimpinan
             'email' => 'pimpinan@example.com',
