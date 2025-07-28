@@ -178,9 +178,9 @@
                                 </table>
 
                                 <!-- Pagination -->
-                                {{-- <div class="d-flex justify-content-end mt-3">
-                                    {{ $masyarakats->appends(request()->input())->links('pagination::bootstrap-4') }}
-                                </div> --}}
+                                <div class="d-flex justify-content-end mt-3">
+                                    {{ $kriterias->appends(request()->input())->links('pagination::bootstrap-4') }}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -212,7 +212,7 @@
         }
     </script>
 
-    
+
 
     <script>
         const today = new Date().toISOString().split('T')[0];

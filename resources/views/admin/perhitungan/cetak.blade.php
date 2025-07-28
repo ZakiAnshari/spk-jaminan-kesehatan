@@ -5,8 +5,30 @@
     <meta charset="UTF-8">
     <title>Laporan Perhitungan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
+        body {
+            background-color: #f8f9fa;
+            font-size: 14px;
+            color: #000;
+        }
+
+        /* Tebalkan isi dan garis tabel */
+        table {
+            border: 2px solid #000;
+        }
+
+        table th,
+        table td {
+            font-weight: bold;
+            font-size: 14px;
+            padding: 8px;
+            border: 2px solid #000 !important;
+        }
+
         @media print {
             .no-print {
                 display: none;
@@ -17,13 +39,18 @@
                 color: #000;
             }
 
+            table {
+                border: 2px solid #000 !important;
+            }
+
             table th,
             table td {
                 font-size: 12px !important;
                 padding: 8px !important;
+                font-weight: bold !important;
+                border: 2px solid #000 !important;
             }
 
-            /* Hapus efek scroll dan garis saat print */
             .print-no-scroll {
                 overflow: visible !important;
             }
@@ -42,14 +69,16 @@
 <body class="bg-light">
 
     <div class="container py-4">
+        <!-- Judul Laporan -->
         <div class="text-center mb-4">
             <h2 class="fw-bold text-uppercase">LAPORAN HASIL PERHITUNGAN</h2>
             <h5 class="mt-2">Sistem Pendukung Keputusan Penentuan Penerima Jaminan Kesehatan Masyarakat</h5>
             <h6 class="text-muted">BPJS Kesehatan Kota Padang Panjang</h6>
         </div>
 
+        <!-- Tabel Hasil Perhitungan -->
         <div class="table-responsive text-nowrap print-no-scroll">
-            <table class="table table-hover table-bordered align-middle text-nowrap mb-0">
+            <table class="table table-bordered align-middle text-nowrap mb-0">
                 <thead class="table-light">
                     <tr>
                         <th style="width: 5px">No</th>
@@ -87,23 +116,21 @@
             </table>
         </div>
 
-        <!-- Bagian Tanda Tangan -->
-        <div class="row mt-5">
-            <div class="col-6"></div>
-            <div class="col-6 text-end">
-                <p class="mb-1">{{ \Carbon\Carbon::now()->translatedFormat('l') }},
-                    {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</p>
-                <p class="mb-5">Kepala Cabang BPJS Kesehatan</p>
-                <p class="fw-bold text-uppercase mb-1">Haris Wahyudi</p>
-                <p class="mb-0">NIP: 19720304 199601 1 003</p>
-            </div>
+        <!-- Tanda Tangan Kanan Bawah -->
+        <div style="position: absolute; bottom: 50px; right: 10%; text-align: right; width: 80%;">
+            <p class="mb-1">{{ \Carbon\Carbon::now()->translatedFormat('l, d F Y') }}</p>
+            <p class="mb-5">Kepala Cabang BPJS Kesehatan</p>
+            <p class="fw-bold text-uppercase mb-1">Haris Wahyudi</p>
+            <p class="mb-0">NIP: 19720304 199601 1 003</p>
         </div>
 
+        <!-- Auto Print -->
         <script type="text/javascript">
             window.print();
         </script>
     </div>
 
+    <!-- Bootstrap Icons (optional) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </body>
 
