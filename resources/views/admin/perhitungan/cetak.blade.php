@@ -118,7 +118,10 @@
 
         <!-- Tanda Tangan Kanan Bawah -->
         <div style="position: absolute; bottom: 50px; right: 10%; text-align: right; width: 80%;">
-            <p class="mb-1">{{ \Carbon\Carbon::now()->translatedFormat('l, d F Y') }}</p>
+            <p class="mb-1">
+                {{ \Carbon\Carbon::now()->locale('id')->translatedFormat('l, d F Y') }}
+            </p>
+
             <p class="mb-5">Kepala Cabang BPJS Kesehatan</p>
             <p class="fw-bold text-uppercase mb-1">Haris Wahyudi</p>
             <p class="mb-0">NIP: 19720304 199601 1 003</p>

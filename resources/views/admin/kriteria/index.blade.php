@@ -40,14 +40,16 @@
                                     <!-- Judul -->
                                     <!-- Tombol Aksi -->
                                     <div class="d-flex gap-2">
-                                        <!-- Tombol Tambah -->
-                                        <button type="button"
-                                            class="btn btn-outline-success account-image-reset  d-flex align-items-center"
-                                            data-bs-toggle="modal" data-bs-target="#addProductModal">
-                                            <i class="bx bx-plus me-2 d-block"></i>
-                                            <span>Tambah</span>
-                                        </button>
+                                        @if (($countData ?? 0) < 5)
+                                            <button type="button"
+                                                class="btn btn-outline-success account-image-reset d-flex align-items-center"
+                                                data-bs-toggle="modal" data-bs-target="#addProductModal">
+                                                <i class="bx bx-plus me-2 d-block"></i>
+                                                <span>Tambah</span>
+                                            </button>
+                                        @endif
                                     </div>
+
                                 </div>
                                 <!-- Modal tambah Data -->
                                 <div class="modal fade" id="addProductModal" tabindex="-1"

@@ -13,7 +13,7 @@ class KriteriaController extends Controller
         // Ambil input pencarian dan jumlah per halaman
         $kriteria_nama = $request->input('kriteria_nama');
         $paginate = $request->input('itemsPerPage', 5);
-
+        $countData = Kriteria::count(); // ganti Product dgn modelmu
         // Inisialisasi query
         $query = Kriteria::query();
 
@@ -26,7 +26,7 @@ class KriteriaController extends Controller
         $kriterias = $query->paginate($paginate);
 
         // Kirim ke view
-        return view('admin.kriteria.index', compact('kriterias', 'kriteria_nama'));
+        return view('admin.kriteria.index', compact('kriterias', 'kriteria_nama','countData'));
     }
 
     public function store(Request $request)

@@ -5,10 +5,21 @@
         <div class="container-xxl flex-grow-1 container-p-y">
             <div class="row">
                 <div class="col-lg-12 mb-3">
+
                     <div class="card">
+
                         <div class="card-body">
-                            <h5 class="pb-2 border-bottom">Table Hitung Normalisasi</h5>
+
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="pb-2 border-bottom mb-0">Table Hitung Normalisasi</h5>
+                                <a href="{{ route('perhitungan.cetak') }}" class="btn btn-warning d-flex align-items-center"
+                                    role="button" target="_blank">
+                                    <i class="bx bx-printer me-1"></i> Cetak
+                                </a>
+                            </div>
+
                             <div class="table-responsive text-nowrap">
+
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
                                         <ul class="mb-0">
@@ -168,10 +179,7 @@
 
                             <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
                                 <h5 class="mb-0">Tabel Hasil Preferensi & Peringkat</h5>
-                                <a href="{{ route('perhitungan.cetak') }}"
-                                    class="btn btn-warning d-flex align-items-center" role="button" target="_blank">
-                                    <i class="bx bx-printer me-1"></i> Cetak
-                                </a>
+
                             </div>
                             <div class="table-responsive text-nowrap">
                                 <table class="table table-hover table-bordered align-middle text-nowrap mb-0">
